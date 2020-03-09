@@ -1,0 +1,3 @@
+(palindrome-p 4334)
+(palindrome-p 4343)
+(palindrome-p 434)
