@@ -1,9 +1,22 @@
-(setq animals '(gazelle giraffe lion tiger))
+(defun add-to-hash (h word)
+	(setf (gethash word h)
+		(+ 1 (or (gethash word h) 0))))
 
-(defun print-elements-recursively (list)
-   (when list                            ; do-again-test
-         (print (car list))              ; body
-         (print-elements-recursively     ; recursive call
-          (cdr list))))                  ; next-step-expression
-     
-(print-elements-recursively animals)
+(defun iterate-through-list (h l)
+   (when l                      
+         (add-to-hash h (car l))       
+         (iterate-through-list 
+         	h (cdr l))))     
+
+(defun word_counter (l &aux (ht (make-hash-table)))
+	(iterate-through-list ht l)
+	(let ((results (list)))
+	    (maphash #'(lambda (key val)
+	                 (setf results
+	                       (append results
+	                               (list (list key val)))))
+	             ht)
+	    results))
+
+(print (word_counter '(A B A B A C A)))
+
