@@ -18,5 +18,7 @@
 	             ht)
 	    results))
 
-(print (word_counter '(A B A B A C A)))
+;(print (word_counter '(A B A B A C A)))
+;(print (word_counter '(НИ ТО НИ СЁ)))
+
 
