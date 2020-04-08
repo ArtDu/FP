@@ -24,4 +24,4 @@
     ans))
 
 ;(print (array-manip #2A((1 2 3) (4 5 6) (7 8 9)) '(1 2 3 4 5)))
-;(print (array-manip #2A((1 2 3) (7 8 9)) '(7 9))
+;(print (array-manip #2A((1 2 3 4) (5 6 7 8)) '(6 8)))
