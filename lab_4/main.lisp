@@ -39,5 +39,4 @@
     new-text))
 
 
-(print (text-traverse '("HELLO      world." "ПРИВЕТ мир")))
-
+;(print (text-traverse '("HELLO      world." "ПРИВЕТ мир")))
