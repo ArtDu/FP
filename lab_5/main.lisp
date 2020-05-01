@@ -83,6 +83,24 @@
                 :terms (sub2-aux p1 p2))))
     ans))
 
+(defmethod sub2 ((p1 polynom) (n number))
+  (let* ( (p2 (make-instance 'polynom
+                :var1 'x
+                :terms (list (make-term :order 0 :coeff n))))
+          (ans (make-instance 'polynom
+                :var1 'x
+                :terms (sub2-aux p1 p2))))
+    ans))
+
+(defmethod sub2 ((n number) (p2 polynom))
+  (let* ( (p1 (make-instance 'polynom
+                :var1 'x
+                :terms (list (make-term :order 0 :coeff n))))
+          (ans (make-instance 'polynom
+                :var1 'x
+                :terms (sub2-aux p1 p2))))
+    ans))
+
 ; ; 5x^2 + 3.3x
 ; (defvar p1 (make-instance 'polynom
 ;           :var1 'x
